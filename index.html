@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700;800&display=swap" rel="stylesheet">
+  <link href="index.css" type="text/css" rel="stylesheet">
+  <title>Frontend Mentor | E-commerce product page</title>
+
+</head>
+
+<body>
+  <header class="nav-bar container-top-bar ">
+    <div class="left-fragment-top-bar-buttons">
+      <img src="images/logo.svg" alt="">
+      <button class="buttons-left-link-top">
+        <span>Collections</span></button>
+      <button class="buttons-left-link-top">
+        <span>Men</span> </button>
+      <button class="buttons-left-link-top">
+        <span>Women</span></button>
+      <button class="buttons-left-link-top">
+        <span>About</span></button>
+      <button class="buttons-left-link-top">
+        <span>Contact</span></button>
+    </div>
+    <div class="profile-cart-button">
+      <button onclick="result()" class="icon-cart"><img src="images/icon-cart.svg" alt=""></button>
+
+      <section class="shopping-cart">
+        <div class="container">
+          <hr>
+          <div class="cart-Container-Toggle">
+            <div class="cartContainer"><a>Cart</a></div>
+            <div class="shopping-cart-items shoppingCartItemsContainer">
+            </div>
+          </div>
+      </section>
+
+      <button class="profile-button"><img src="images/image-avatar.png" alt=""></button>
+    </div>
+  </header>
+
+  <main class="parent-container item">
+    <section class="gallery">
+      <div id="img-major">
+        <a href="#image1">
+          <img class="item-image" src="images/image-product-1.jpg" alt="">
+        </a>
+      </div>
+      <div class="img-miniature">
+        <a href="#image1">
+          <img src="images/image-product-1-thumbnail.jpg" alt="">
+        </a>
+        <a href="#image2">
+          <img src="images/image-product-2-thumbnail.jpg" alt="">
+        </a>
+        <a href="#image3">
+          <img src="images/image-product-3-thumbnail.jpg" alt="">
+        </a>
+        <a href="#image4">
+          <img src="images/image-product-4-thumbnail.jpg" alt="">
+        </a>
+      </div>
+    </section>
+    <article class="main-img-container" id="image1">
+      <a href="#image4" class="next"><img id="bts-next-previous" src="images/icon-previous.svg"></a>
+      <img src="images/image-product-1.jpg" alt="">
+      <a href="#image2" class="next"><img id="bts-next-previous" src="images/icon-next.svg"></a>
+      <a href="#" class="main-img-button-close ">X</a>
+    </article>
+    <article class="main-img-container" id="image2">
+      <a href="#image1" class="next"><img id="bts-next-previous" src="images/icon-previous.svg"></a>
+      <img src="images/image-product-2.jpg" alt="">
+      <a href="#image3" class="next"><img id="bts-next-previous" src="images/icon-next.svg"></a>
+      <a href="#" class="main-img-button-close ">X</a>
+    </article>
+    <article class="main-img-container" id="image3">
+      <a href="#image2" class="next"><img id="bts-next-previous" src="images/icon-previous.svg"></a>
+      <img src="images/image-product-3.jpg" alt="">
+      <a href="#image4" class="next"><img id="bts-next-previous" src="images/icon-next.svg"></a>
+      <a href="#" class="main-img-button-close ">X</a>
+    </article>
+    <article class="main-img-container" id="image4">
+      <a href="#image3" class="next"><img id="bts-next-previous" src="images/icon-previous.svg"></a>
+      <img src="images/image-product-4.jpg" alt="">
+      <a href="#image1" class="next"><img id="bts-next-previous" src="images/icon-next.svg"></a>
+      <a href="#" class="main-img-button-close ">X</a>
+    </article>
+
+    <!--
+      <div class="box" id="g-box">
+      <a href="#image1">
+        <img src="images/image-product-1-thumbnail.jpg" alt="">
+      </a>
+      <a href="#image2">
+        <img src="images/image-product-2-thumbnail.jpg" alt="">
+      </a>
+      <a href="#image3">
+        <img src="images/image-product-3-thumbnail.jpg" alt="">
+      </a>
+      <a href="#image4">
+        <img src="images/image-product-4-thumbnail.jpg" alt="">
+      </a>
+    </div>
+-->
+    <div class="descrition-product ">
+      <a class="brand-name"> SNEAKER COMPANY</a>
+
+      <h1 class="item-title">Fall Limited Edition Sneakers</h1>
+
+      <p>These low-profile sneakers are your perfect casual wear companion. Featuring a
+        durable rubber outer sole, they’ll withstand everything the weather can offer.
+      </p>
+      <div class="container-price">
+        <a class="price item-price">$125.00</a>
+        <a class="discount">50%</a>
+      </div>
+      <a class="previous-price">$250.00</a>
+      <div class="bts-add-buy">
+        <button id="btn1" class="buttons-quantity-products">-</button><input type="text" class="quat" id="txt" value="1" /><button id="btn2"
+          class="buttons-quantity-products">+</button>
+        <div class="node">
+          <button class="buy-button btn-dark addToCart"><img src="images/icon-cart.svg" alt="">Add to cart</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!--
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>-->
+  <script src="app.js"></script>
+</body>
+
+</html>
