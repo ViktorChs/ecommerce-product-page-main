@@ -6,17 +6,24 @@
 body {
   font-size: 16px;
   font-family: "Kumbh Sans", sans-serif;
+  width: 100vw;
+  height: 100vh;
 }
 /*element-container-top-bar*/
 .container-top-bar {
   display: flex;
+  border-bottom: 1px rgb(222, 222, 222) solid;
   align-items: center;
-  border-bottom: 1px hwb(260deg 87% 13%) solid;
-  margin: 6px 160px;
-  padding: 29px 0px 37px 0px;
-  justify-content: space-between;
+  height: 15vh;
+  width: 90%;
+  margin: auto;
+  justify-content: space-around;
 }
+
 /*- display & img -*/
+.botones-izquierdos {
+  display: flex;
+}
 .left-fragment-top-bar-buttons {
   display: flex;
   align-content: center;
@@ -28,11 +35,11 @@ body {
 .buttons-left-link-top {
   background: transparent;
   border: transparent;
-  font-size: 16px;
+  font-size: 1.07vw;
   font-family: "Kumbh Sans", sans-serif;
 }
 .buttons-left-link-top span {
-  padding: 2.6rem 1rem;
+  padding: 23px 1rem;
   color: #9e9e9e;
   cursor: pointer;
 } 
@@ -42,12 +49,13 @@ body {
 }
 /* - Profile & cart buttons property - */
 .profile-cart-button {
-  display: flex;
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 button.icon-cart {
   background: transparent;
   border: 1px;
-  padding: 0px 35px;
   cursor: pointer;
 }
 
@@ -122,32 +130,40 @@ button.btn-danger.buttonDelete {
 }
 
 .profile-button img {
-  width: 2rem;
+  width: 2.5rem;
 }
 /*-Parent container-*/
+
 .parent-container{
   display: flex;
-  justify-content: center;
+  width: 80vw;
+  height: 85vh;
   align-items: center;
-  margin: 92px 10px 0px 42px;
+  margin: auto;
+  justify-content: space-evenly;
 }
+
 /*- mini galery -*/
+section.gallery {
+  width: 35%;
+  min-width: 223px;
+  display: inline-flex;
+  height: 75%;
+  flex-direction: column;
+}
 #img-major img {
-  width: 442px;
   border-radius: 15px;
-  margin-bottom: 30px;
-  margin-left: 138px;
+    width: 93%;
+    height: 95%;
+    margin: auto;
+    max-width: 659px;
 }
 .img-miniature {
   display: flex;
-
-  width: 442px;
-  justify-content: space-between;
-  margin-left: 134px;
 }
 .img-miniature img {
-  width: 87px;
   border-radius: 14px;
+  width: 70%;
 }
 .img-miniature img:hover {
   opacity: 0.5;
@@ -201,26 +217,22 @@ button.btn-danger.buttonDelete {
 .descrition-product {
   display: flex;
   flex-direction: column;
-  width: 51vh;
-  margin: 0px 81px 0px 108px;
-  height: 425px;
-  justify-content: space-around;
+  width: 40%;
 }
 .brand-name{
-  font-size: 14px;
+  font-size: 1.1vw ;
   color: rgb(234 133 59);
   font-weight: 700;
 }
 .descrition-product h1 {
-  width: 365px;
   color: hsl(220, 13%, 13%);
-  font-size: 41px;
+  font-size: 2.5vw;
   margin-bottom: 12px;
   font-weight: 800;
 }
 .descrition-product p {
   color: hsl(219, 9%, 45%);
-  font-size: 17px;
+  font-size: 1.1vw;
   margin-bottom: 20px;
   line-height: 1.6;
 }
@@ -233,7 +245,7 @@ button.btn-danger.buttonDelete {
   font-weight: bold;
   color: hsl(220, 13%, 13%);
   display: flex;
-  width: 88px;
+  
 }
 .discount {
   background-color: hsl(25, 100%, 94%);
@@ -263,8 +275,8 @@ button.btn-danger.buttonDelete {
   border-color: transparent;
   align-items: center;
   justify-content: center;
-  width: 239px;
-  height: 50px;
+  width: 14.9375rem;
+  height: 3.125rem;
   border-radius: 9px;
   font-weight: 600;
   box-shadow: 0px 11px 19px 9px rgb(255 152 0 / 24%);
@@ -277,8 +289,8 @@ button.btn-danger.buttonDelete {
 /*quantity container e buttons*/
 .buttons-quantity-products {
   background-color: hsl(223, 64%, 98%);
-  width: 69px;
-  height: 51px;
+  width: 4.3125rem;
+  height: 3.1875rem;
   border-color: transparent;
   color: hsl(26, 100%, 55%);
   font-weight: 800;
@@ -297,7 +309,118 @@ button.btn-danger.buttonDelete {
   text-align: center;
   cursor: pointer;
 }
+label.bar {
+  display: none;
+}
 /****************/
 .cart {
   display: flex;
 }
+/* Responsive Design */ 
+/* Mobile */
+@media only screen and (max-width:480px){
+  body{
+    width: 100%;
+  }
+  
+  .container-top-bar {
+    height: 7vh;
+    width: 100vw;
+    margin: 0;
+}
+.left-fragment-top-bar-buttons{
+  display: none;
+}
+.container-logo{
+  width: max-content;
+}
+
+.parent-container {
+  flex-direction: column;
+  margin: 2px;
+  align-items: normal;
+  justify-content: normal;
+  justify-items: normal;
+  height: 100vh;
+  width: 100vw;
+}
+#img-major img {
+  margin-left: 0px;
+  width: 100%;
+  height: 37vh;
+  border-radius: 0px;
+}
+.img-miniature{
+  display: none;
+}
+/**/
+
+  .descrition-product {
+    margin: 10px 15px;
+    width: 90%;
+    height: 45%;
+    max-height: 50%;
+}
+.descrition-product p {
+  font-size: 4.1vw;
+}
+.brand-name {
+  font-size: 3.1vw;
+}
+.descrition-product h1 {
+  font-size: 7.5vw;
+}
+section.gallery {
+  width: 100vw;
+  height: 40vh;
+}
+/**/
+.containerx {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.buy-button {
+  margin-left: 0px;
+  width: 100%;
+}
+.node {
+  width: 90%;
+}
+.bts-add-buy {
+  display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    width: 104%;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+.true {
+  width: 90%;
+  display: flex;
+}
+.buttons-quantity-products{
+  width: 35%;
+}
+#txt{
+  width: 30%;
+}
+
+
+
+.descrition-product {
+  margin: 10px;
+  width: 90%;
+}
+}
+/* Table */
+@media only screen and (max-width:768px){
+
+}
+/*laptop*/
+@media only screen and (max-width: 992px){
+
+}
+/* large screen */ 
+@media only screen and (max-width: 1200px){}
