@@ -346,6 +346,13 @@ label.bar {
 .container-logo{
   width: max-content;
 }
+.cart-Container-Toggle.active {
+  position: absolute;
+  top: 8%;
+  right: 2%;
+  width: 96%;
+  min-height: 30%;
+}
 
 .parent-container {
   flex-direction: column;
