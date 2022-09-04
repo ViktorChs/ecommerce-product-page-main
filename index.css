@@ -215,9 +215,10 @@ section.gallery {
 /* --- */
 
 .descrition-product {
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
   width: 40%;
+  gap: 14px;
 }
 .brand-name{
   font-size: 1.1vw ;
@@ -268,7 +269,7 @@ section.gallery {
 
 
 .buy-button {
-  display: flex;
+  display: inline-flex;
   color: hsl(0, 0%, 100%);
   background-color: hsl(26, 100%, 55%);
   font-family: "Kumbh Sans", sans-serif;
@@ -282,6 +283,10 @@ section.gallery {
   box-shadow: 0px 11px 19px 9px rgb(255 152 0 / 24%);
   margin-left: 24px;
   cursor: pointer;
+  gap: 10px;
+}
+button.buy-button.btn-dark.addToCart img {
+  width: 15px;
 }
 .buy-button:hover {
   opacity: 0.5;
@@ -300,6 +305,11 @@ section.gallery {
 
 .bts-add-buy{
   display: flex;
+}
+.true {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
 }
 #txt{
   background-color: hsl(223, 64%, 98%);
@@ -320,7 +330,9 @@ label.bar {
 /* Mobile */
 @media only screen and (max-width:480px){
   body{
-    width: 100%;
+    height: 125vh;
+    overflow-x: hidden;
+
   }
   
   .container-top-bar {
@@ -345,7 +357,7 @@ label.bar {
   width: 100vw;
 }
 #img-major img {
-  margin-left: 0px;
+  margin-left: -2px;
   width: 100%;
   height: 37vh;
   border-radius: 0px;
@@ -412,6 +424,16 @@ section.gallery {
 .descrition-product {
   margin: 10px;
   width: 90%;
+}
+
+.profile-button img {
+  width: 1.3rem;
+}
+button.icon-cart img {
+  width: 1.2rem;
+}
+.container-logo img {
+  width: 6rem;
 }
 }
 /* Table */
