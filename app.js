@@ -1,5 +1,13 @@
+
+function result2() {
+  let toggleAble = document.querySelector(".left-fragment-top-bar-buttons");
+  toggleAble.classList.toggle("active");
+}
+
 let sumar = document.getElementById("btn2");
 let restar = document.getElementById("btn1");
+
+
 
 sumar.onclick = function() {
 valor = document.getElementById("txt");
@@ -12,6 +20,7 @@ valor = document.getElementById("txt");
     if (valor.value > 01)valor.value --;
 
   };
+
 function result() {
   let toggleAble = document.querySelector(".cart-Container-Toggle");
   toggleAble.classList.toggle("active");
