@@ -14,9 +14,10 @@ body {
 .tester {
   width: 100vw;
   height: 100vh;
-  background: url(design/desktop-design.jpg);
+  background: url(design/active-states-basket-empty.jpg);
   opacity: 0.3;
   position: absolute;
+  display: none;
 
   z-index: -1000;
 }
@@ -388,8 +389,14 @@ button.btn-danger.buttonDelete {
     justify-content: center;
     flex-direction: row;
   }
+  .cart-Container-Toggle.active{
+    height: 28vh;
+    right: 6%;
+    width: 25%;
+    min-height: 28%;
+   }
   .profile-button img {
-    width: 4vw;
+    width: calc(2rem + 1vw);
 }
 
   .parent-container {
@@ -402,6 +409,11 @@ button.btn-danger.buttonDelete {
     height: 84vh;
     gap: 50px;
   }
+  .gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
   #img-major img {
     width: calc(11.5rem + 21.5vw);
     height: calc(1rem + 48vh);
@@ -423,7 +435,7 @@ button.btn-danger.buttonDelete {
     font-size: calc(2rem + 1vw);
   }
   .descrition-product {
-    gap: 4;
+    gap: 4px;
   }
   .descrition-product p {
     font-size: calc(0.2rem + 1vw);
@@ -469,6 +481,7 @@ button.btn-danger.buttonDelete {
     width: calc(-15rem + 47.5vw);
     height: calc(1rem + 48vh);
     border-radius: 11px;
+    max-width: 540px;
   }
   .parent-container {
     display: flex;
@@ -482,5 +495,11 @@ button.btn-danger.buttonDelete {
   }
   .img-miniature img {
     width: calc(3.1rem + 3vw);
+    max-width: 526px;
+
 }
+.descrition-product {
+  max-width: 600px;
+}
+
 }
