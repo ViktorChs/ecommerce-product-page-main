@@ -16,12 +16,13 @@
 
 </head>
 <div class="tester"></div>
+
 <body>
 
   <header class="nav-bar container-top-bar ">
     <div class="botones-izquierdos">
       <button onclick="result2()" class="button-menu-device">
-        <img  class="img-button-menu" src="images/icon-menu.svg" alt="">
+        <img class="img-button-menu" src="images/icon-menu.svg" alt="">
       </button>
       <div class="container-logo">
         <img src="images/logo.svg" alt="">
@@ -55,6 +56,7 @@
             </tbody>
         </section>
 
+    
         <button class="profile-button"><img src="images/image-avatar.png" alt=""></button>
       </div>
   </header>
@@ -63,66 +65,34 @@
     <section class="gallery">
       <div id="img-major">
         <a href="#image1">
-          <img class="item-image" src="images/image-product-1.jpg" alt="">
+          <img class="item-image" src="images/image-product-1.jpg" alt="galeria de imagenes">
         </a>
       </div>
       <div class="img-miniature">
-        <a href="#image1">
-          <img src="images/image-product-1-thumbnail.jpg" alt="">
-        </a>
-        <a href="#image2">
-          <img src="images/image-product-2-thumbnail.jpg" alt="">
-        </a>
-        <a href="#image3">
-          <img src="images/image-product-3-thumbnail.jpg" alt="">
-        </a>
-        <a href="#image4">
-          <img src="images/image-product-4-thumbnail.jpg" alt="">
-        </a>
+        <img src="images/image-product-1.jpg" alt="galeria de imagenes">
+        <img src="images/image-product-2.jpg" alt="galeria de imagenes">
+        <img src="images/image-product-3.jpg" alt="galeria de imagenes">
+        <img src="images/image-product-4.jpg" alt="galeria de imagenes">
+      </div>
+
+
+    </section>
+    <section id="contenedor-principal">
+      <div id="contenedor-interno">
+        <img id="img-activa" src="images/image-product-1.jpg" alt="galeria de imagenes">
+        <button id="btn-close" type="button"><img src="images/icon-close.svg"></button>
+        <button id="btn-next" type="button"><img src="images/icon-next.svg"></button>
+        <button id="btn-previous" type="button"><img src="images/icon-previous.svg"></button>
+
+        <div id="con " class="img-miniature">
+        <img src="images/image-product-1.jpg" alt="galeria de imagenes">
+        <img src="images/image-product-2.jpg" alt="galeria de imagenes">
+        <img src="images/image-product-3.jpg" alt="galeria de imagenes">
+        <img src="images/image-product-4.jpg" alt="galeria de imagenes">
+      </div>
       </div>
     </section>
-    <!--
-    <article class="main-img-container" id="image1">
-      <a href="#image4" class="next"><img id="bts-next-previous" src="images/icon-previous.svg"></a>
-      <img src="images/image-product-1.jpg" alt="">
-      <a href="#image2" class="next"><img id="bts-next-previous" src="images/icon-next.svg"></a>
-      <a href="#" class="main-img-button-close ">X</a>
-    </article>
-    <article class="main-img-container" id="image2">
-      <a href="#image1" class="next"><img id="bts-next-previous" src="images/icon-previous.svg"></a>
-      <img src="images/image-product-2.jpg" alt="">
-      <a href="#image3" class="next"><img id="bts-next-previous" src="images/icon-next.svg"></a>
-      <a href="#" class="main-img-button-close ">X</a>
-    </article>
-    <article class="main-img-container" id="image3">
-      <a href="#image2" class="next"><img id="bts-next-previous" src="images/icon-previous.svg"></a>
-      <img src="images/image-product-3.jpg" alt="">
-      <a href="#image4" class="next"><img id="bts-next-previous" src="images/icon-next.svg"></a>
-      <a href="#" class="main-img-button-close ">X</a>
-    </article>
-    <article class="main-img-container" id="image4">
-      <a href="#image3" class="next"><img id="bts-next-previous" src="images/icon-previous.svg"></a>
-      <img src="images/image-product-4.jpg" alt="">
-      <a href="#image1" class="next"><img id="bts-next-previous" src="images/icon-next.svg"></a>
-      <a href="#" class="main-img-button-close ">X</a>
-    </article>
--->
-    <!--
-      <div class="box" id="g-box">
-      <a href="#image1">
-        <img src="images/image-product-1-thumbnail.jpg" alt="">
-      </a>
-      <a href="#image2">
-        <img src="images/image-product-2-thumbnail.jpg" alt="">
-      </a>
-      <a href="#image3">
-        <img src="images/image-product-3-thumbnail.jpg" alt="">
-      </a>
-      <a href="#image4">
-        <img src="images/image-product-4-thumbnail.jpg" alt="">
-      </a>
-    </div>
--->
+
     <div class="descrition-product ">
       <a class="brand-name"> SNEAKER COMPANY</a>
 
@@ -145,7 +115,8 @@
         </div>
 
         <div class="node">
-          <button class="buy-button btn-dark addToCart"><img src="images/icon-cart - white.svg" alt="">Add to cart</button>
+          <button class="buy-button btn-dark addToCart prueba"><img src="images/icon-cart - white.svg" alt="">Add to
+            cart</button>
         </div>
       </div>
     </div>
@@ -157,6 +128,7 @@
     Coded by <a href="#">Your Name Here</a>.
   </div>-->
   <script src="app.js"></script>
+  <script src="galery.js"></script>
 </body>
 
 </html>

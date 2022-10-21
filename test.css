@@ -157,14 +157,14 @@ p.item-quat.shoppingCartItemPricePerQuantity {
   color: rgb(0 0 0);
 }
 .text-cart-noitem {
-  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 1rem;
   font-weight: 700;
   color: grey;
-  height: 35vh;
+  min-height: 22vh;
+  height: auto;
 }
 .shopping-cart-price {
   color: rgb(0 0 0 / 65%);
@@ -379,7 +379,6 @@ button.btn-danger.buttonDelete {
   .buttons-left-link-top {
     width: calc(4rem + 1vw);
     display: flex;
-    height: auto;
     margin: unset;
     background: transparent;
     border-color: transparent;
@@ -389,12 +388,27 @@ button.btn-danger.buttonDelete {
     justify-content: center;
     flex-direction: row;
   }
+  .buttons-left-link-top :hover {
+    border-bottom: solid hsl(26, 100%, 55%);
+    color: black;
+    height: 14vh;
+    max-height: 62px;
+  }
   .cart-Container-Toggle.active{
     height: 28vh;
     right: 6%;
     width: 25%;
     min-height: 28%;
    }
+   .cartContainer {
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    padding: 5px 17px;
+    font-size: 0.79rem;
+    font-weight: 900;
+    border-bottom: 1px solid grey;
+}
   .profile-button img {
     width: calc(2rem + 1vw);
 }
@@ -431,6 +445,95 @@ button.btn-danger.buttonDelete {
     flex-wrap: nowrap;
     gap: 25px;
   }
+  .img-miniature img:hover {
+    opacity: 0.5;
+  }
+  /*********************/
+  /*Contenedor Principal del Lightbox*/
+
+  #img-activa {
+    width: 80%;
+    height: auto;
+    border-radius: 10px;
+  }
+#contenedor-principal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.55);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+/*Contenedor interno del Lightbox*/
+
+#contenedor-interno {
+  border-radius: 5px;
+  padding: 2px;
+  max-width: 500px;
+  min-height: 400px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+    align-items: center;
+}
+
+/*Botones*/
+
+button {
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  color: #f3f3f3;
+}
+
+#btn-close {
+  position: absolute;
+  top: -12%;
+  right: 53px;
+  font-size: 3rem;
+}
+
+#btn-previous {
+  position: absolute;
+  top: 35%;
+  left: 30px;
+  font-size: 3rem;
+  background: white;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 37px;
+}
+
+#btn-next {
+  position: absolute;
+  top: 35%;
+  right: 30px;
+  font-size: 3rem;
+  background: white;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 37px;
+}
+#con{
+display: none;
+}
+#con img{
+  width: calc(2.09rem + 3vw);
+
+}
+  /*********************/
   .item-title {
     font-size: calc(2rem + 1vw);
   }
@@ -472,6 +575,9 @@ button.btn-danger.buttonDelete {
   .buy-button {
     height: 57px;
     width: 17rem;
+  }
+  .buy-button:hover {
+    opacity: 0.5;
   }
 }
 

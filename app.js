@@ -48,6 +48,8 @@ function addToCartClicked(event) {
 
   let priceCartItem = itemPrice.slice(1);
     const pricePerQuantity = priceCartItem * amountItem + '.00';
+    
+
 
   addItemToShoppingCart(itemTitle, itemPrice, itemImage, amountItem, pricePerQuantity);
 }
@@ -110,3 +112,8 @@ function removeShoppingCartItem(event){
   const buttonClicked = event.target;
   buttonClicked.closest('.shoppingCartItem').remove();
 }
+
+
+const detectar = document.querySelector('.shoppingCartItem');
+
+
