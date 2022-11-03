@@ -1,80 +1,113 @@
+// DOM elements
 
-function result2() {
-  let toggleAble = document.querySelector(".left-fragment-top-bar-buttons");
-  toggleAble.classList.toggle("active");
+const shoppingCartItems = document.querySelector('#shoppingCartItemsContainer');
+const sumButton = document.getElementById('btn2');
+const substractButton = document.getElementById('btn1');
+const toggleAble = document.querySelector('.left-fragment-top-bar-buttons');
+const valor = document.querySelector('#txt')
+const shoppingCartItemsContainer = document.querySelector('.shopping-cart');
+const cartContainerToggle = document.querySelector('#cart-container-toggle');
+
+console.log(shoppingCartItems);
+
+// Initial values for the cart
+
+let cart = {
+  // *TODOS*
+  // Usa este array para almacenar los productos que el usuario añada (o quite) al carrito
+  // Usa una función para leer actualizar este objeto cada vez que haya un cambio en el carrito
+
+  // Cambio grande: ahora que el carrito es un objeto que tiene un array de productos, lee de este array para mostrar los productos.
+  // Calcula el total de los productos y si el array es mayor a 0, haz un loop para mostrar los productos. De resto, muestra el mensaje de carrito vacío.
+  // Lee: manipulación de arrays, manipulación de objetos, manipulación de DOM
+  items: [],
+  total: 0,
+};
+
+// Cart initialization
+
+function cartInitialization() { 
+   if (cart.total === 0) {
+    shoppingCartItems.innerHTML = 'funciona';
+  }
 }
 
-let sumar = document.getElementById("btn2");
-let restar = document.getElementById("btn1");
+// Cart functions
+
+/* function readCartState() {
+  
+} 
+
+function updateCartState() {
+  
+}  */
 
 
+// Event handlers
 
-sumar.onclick = function() {
-valor = document.getElementById("txt");
-    if (valor.value < 100)valor.value ++;
-
-  };
-
-  restar.onclick = function() {
-    valor = document.getElementById("txt")
-    if (valor.value > 01)valor.value --;
-
-  };
-
-function result() {
-  let toggleAble = document.querySelector(".cart-Container-Toggle");
-  toggleAble.classList.toggle("active");
+function handleCartContainerToggle() {
+  shoppingCartItemsContainer.classList.toggle('active');
 }
 
-const addToShoppingCartButtons = document.querySelectorAll(".addToCart");
+const addToShoppingCartButtons = document.querySelectorAll('.addToCart');
 addToShoppingCartButtons.forEach((addToCardButton) => {
-  addToCardButton.addEventListener("click", addToCartClicked);
+  addToCardButton.addEventListener('click', addToCartClicked);  
 });
 
-const shoppingCartItemsContainer = document.querySelector(
-  ".shoppingCartItemsContainer"
-);
 
 function addToCartClicked(event) {
   const button = event.target;
-  const item = button.closest(".item");
+  const item = button.closest('.item');
 
-  const itemTitle = item.querySelector(".item-title").textContent;
-  const itemPrice = item.querySelector(".item-price").textContent;
-  const itemImage = item.querySelector(".item-image").src;
+  const itemTitle = item.querySelector('.item-title').textContent;
+  const itemPrice = item.querySelector('.item-price').textContent;
+  const itemImage = item.querySelector('.item-image').src;
 
-  const qt = button.closest(".bts-add-buy");
-  const amountItem = qt.querySelector(".quat").value;
+  const qt = button.closest('.bts-add-buy');
+  const amountItem = qt.querySelector('.quat').value;
 
   let priceCartItem = itemPrice.slice(1);
-    const pricePerQuantity = priceCartItem * amountItem + '.00';
-    
+  const pricePerQuantity = priceCartItem * amountItem + '.00';
 
-
-  addItemToShoppingCart(itemTitle, itemPrice, itemImage, amountItem, pricePerQuantity);
+  addItemToShoppingCart(
+    itemTitle,
+    itemPrice,
+    itemImage,
+    amountItem,
+    pricePerQuantity,
+  );
 }
 
 
+// Todo: lee los comentarios de arriba y reescribe esta función para que funcione con el nuevo objeto cart. Y reusa las funciones de
+// operaciones del carrito.
 
-function addItemToShoppingCart(itemTitle, itemPrice, itemImage,amountItem,pricePerQuantity) {
-
+/* function addItemToShoppingCart(
+  itemTitle,
+  itemPrice,
+  itemImage,
+  amountItem,
+  pricePerQuantity,
+) {
+  if (cart.items.length === 0) {
+    cart.total++;
+   }
   const elementsTitle = shoppingCartItemsContainer.getElementsByClassName(
-    'shoppingCartItemTitle'
+    'shoppingCartItemTitle',
   );
-  
+
   for (let i = 0; i < elementsTitle.length; i++) {
     if (elementsTitle[i].innerText === itemTitle) {
- let e = (elementsTitle[
-          i
-        ].parentElement.parentElement.parentElement.querySelector(
-          '.shoppingCartItemQuantity'
-          )
-        );
+      let e = elementsTitle[
+        i
+      ].parentElement.parentElement.parentElement.querySelector(
+        '.shoppingCartItemQuantity',
+      );
       e.textContent++;
       return;
     }
   }
-  const shoppingCartRow = document.createElement("div");
+  const shoppingCartRow = document.createElement('div');
   const shoppingCarContent = `<div class="shoppingCartItem">
       <div class="col-6">
           <div class="shopping-cart-item ">
@@ -89,7 +122,9 @@ function addItemToShoppingCart(itemTitle, itemPrice, itemImage,amountItem,priceP
               <div class="priceElement">
               <p class="item-price shoppingCartItemPrice">${itemPrice}</p>
               <p class="item-quat shoppingCartItemquat shoppingCartItemQuantity">${amountItem}</p>
-              <p class="item-quat shoppingCartItemPricePerQuantity ">${'$' + pricePerQuantity}</p>
+              <p class="item-quat shoppingCartItemPricePerQuantity ">${
+                '$' + pricePerQuantity
+              }</p>
               </div>
           </div>
       </div>
@@ -101,19 +136,29 @@ function addItemToShoppingCart(itemTitle, itemPrice, itemImage,amountItem,priceP
       </div>
   </div>`;
   shoppingCartRow.innerHTML = shoppingCarContent;
-  shoppingCartItemsContainer.append(shoppingCartRow);
+  shoppingCartItems.innerHTML(shoppingCartRow);
 
-   shoppingCartRow
-   .querySelector('.buttonDelete')
-   .addEventListener('click', removeShoppingCartItem);
-}
+  shoppingCartRow
+    .querySelector('.buttonDelete')
+    .addEventListener('click', removeShoppingCartItem);
+} */
 
-function removeShoppingCartItem(event){
+function removeShoppingCartItem(event) {
   const buttonClicked = event.target;
   buttonClicked.closest('.shoppingCartItem').remove();
 }
 
 
-const detectar = document.querySelector('.shoppingCartItem');
+// Event listeners
+
+sumButton.addEventListener('click', () => valor.value < 100 ? valor.value++ : '');
+
+substractButton.addEventListener('click', () => valor.value > 1 ? valor.value-- : "");
+
+cartContainerToggle.addEventListener('click', () => {
+  handleCartContainerToggle();
+});
 
 
+
+cartInitialization();
