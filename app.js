@@ -41,6 +41,8 @@ function agregarAlcarrito()  {
   cart.items.push(prod)
   cart.total = cart.items.length
   readCartState()
+  console.log(cart.items)
+  console.log(cart.total)
 };
 
 
