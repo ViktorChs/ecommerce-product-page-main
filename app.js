@@ -1,119 +1,120 @@
+let pro = [
+  {
+    "id": 1,
+    "precio": 125.00,
+    "title": "Fall Limited Edition Sneakers",
+    "thumbnailUrl": "images/image-product-1-thumbnail.jpg"
+  }];
 
-function result2() {
-  let toggleAble = document.querySelector(".left-fragment-top-bar-buttons");
-  toggleAble.classList.toggle("active");
-}
+// DOM elements
+const notbutton = document.querySelector(".text-cart-noitem");
+const shoppingCartItems = document.querySelector("#shoppingCartItemsContainer");
+const sumButton = document.getElementById("btn2");
+const substractButton = document.getElementById("btn1");
+const toggleAble = document.querySelector(".left-fragment-top-bar-buttons");
+const valor = document.querySelector("#txt");
+const shoppingCartItemsContainer = document.querySelector(".shopping-cart");
+const cartContainerToggle = document.querySelector("#cart-container-toggle");
 
-let sumar = document.getElementById("btn2");
-let restar = document.getElementById("btn1");
+// Initial values for the cart
 
+let cart = {
+  items: [],
+  total: 0,
+};
 
+// Cart initialization
 
-sumar.onclick = function() {
-valor = document.getElementById("txt");
-    if (valor.value < 100)valor.value ++;
+// Cart functions
 
-  };
-
-  restar.onclick = function() {
-    valor = document.getElementById("txt")
-    if (valor.value > 01)valor.value --;
-
-  };
-
-function result() {
-  let toggleAble = document.querySelector(".cart-Container-Toggle");
-  toggleAble.classList.toggle("active");
-}
-
-const addToShoppingCartButtons = document.querySelectorAll(".addToCart");
-addToShoppingCartButtons.forEach((addToCardButton) => {
-  addToCardButton.addEventListener("click", addToCartClicked);
-});
-
-const shoppingCartItemsContainer = document.querySelector(
-  ".shoppingCartItemsContainer"
-);
-
-function addToCartClicked(event) {
-  const button = event.target;
-  const item = button.closest(".item");
-
-  const itemTitle = item.querySelector(".item-title").textContent;
-  const itemPrice = item.querySelector(".item-price").textContent;
-  const itemImage = item.querySelector(".item-image").src;
-
-  const qt = button.closest(".bts-add-buy");
-  const amountItem = qt.querySelector(".quat").value;
-
-  let priceCartItem = itemPrice.slice(1);
-    const pricePerQuantity = priceCartItem * amountItem + '.00';
-    
-
-
-  addItemToShoppingCart(itemTitle, itemPrice, itemImage, amountItem, pricePerQuantity);
-}
-
-
-
-function addItemToShoppingCart(itemTitle, itemPrice, itemImage,amountItem,pricePerQuantity) {
-
-  const elementsTitle = shoppingCartItemsContainer.getElementsByClassName(
-    'shoppingCartItemTitle'
-  );
-  
-  for (let i = 0; i < elementsTitle.length; i++) {
-    if (elementsTitle[i].innerText === itemTitle) {
- let e = (elementsTitle[
-          i
-        ].parentElement.parentElement.parentElement.querySelector(
-          '.shoppingCartItemQuantity'
-          )
-        );
-      e.textContent++;
-      return;
-    }
+function cartInitialization() {
+  if (cart.total <= 0) {
+    notbutton.style.display = "flex";
+  } else if ((cart.total = 1)) {
+    notbutton.style.display = "none";
   }
-  const shoppingCartRow = document.createElement("div");
-  const shoppingCarContent = `<div class="shoppingCartItem">
+  
+}
+  const prod = pro.find((prodId) => prodId.id == 1);
+
+function agregarAlcarrito()  {
+  cart.items.push(prod)
+  cart.total = cart.items.length
+  readCartState()
+};
+
+
+const deleteItem = (prodId) => {
+  const item = cart.items.find((prod) => prod.id === prodId)
+  const index = cart.items.indexOf(item)
+  cart.items.splice(index, 1)
+  cart.total = cart.items.length
+  readCartState() 
+  
+  
+}
+
+ const readCartState = () => {
+shoppingCartItems.innerHTML = ""
+
+cart.items.forEach((prod) =>{
+  const div = document.createElement('div');
+  div.innerHTML = `<div class="shoppingCartItem">
       <div class="col-6">
           <div class="shopping-cart-item ">
-              <img src=${itemImage} class="shopping-cart-image">
+              <img src=${prod.thumbnailUrl} class="shopping-cart-image">
               
           </div>
-
       </div>
       <div class="col-2">
           <div class="shopping-cart-price ">
-              <a class="shopping-cart-item-title shoppingCartItemTitle ">${itemTitle}</a>
+              <a class="shopping-cart-item-title shoppingCartItemTitle ">${prod.title}</a>
               <div class="priceElement">
-              <p class="item-price shoppingCartItemPrice">${itemPrice}</p>
-              <p class="item-quat shoppingCartItemquat shoppingCartItemQuantity">${amountItem}</p>
-              <p class="item-quat shoppingCartItemPricePerQuantity ">${'$' + pricePerQuantity}</p>
+              <p class="item-price shoppingCartItemPrice">${prod.precio}</p>
+              <p class="item-quat shoppingCartItemquat shoppingCartItemQuantity"></p>
+              <p class="item-quat shoppingCartItemPricePerQuantity "></p>
               </div>
           </div>
       </div>
       <div class="col-4">
           <div
               class="shopping-cart-quantity ">
-              <button class="btn-danger buttonDelete" type="button"><img src="./images/icon-delete.svg"></button>
+              <button onclick="deleteItem(${prod.id})" class="btn-danger buttonDelete" type="button"><img src="./images/icon-delete.svg"></button>
           </div>
       </div>
   </div>`;
-  shoppingCartRow.innerHTML = shoppingCarContent;
-  shoppingCartItemsContainer.append(shoppingCartRow);
 
-   shoppingCartRow
-   .querySelector('.buttonDelete')
-   .addEventListener('click', removeShoppingCartItem);
+shoppingCartItems.appendChild(div)
+})
+  const deletebutton = document.querySelector('.buttonDelete')
+deletebutton.addEventListener('click', () => {
+  cartInitialization()})
+} 
+
+// Event handlers
+
+function handleCartContainerToggle() {
+  shoppingCartItemsContainer.classList.toggle("active");
 }
 
-function removeShoppingCartItem(event){
-  const buttonClicked = event.target;
-  buttonClicked.closest('.shoppingCartItem').remove();
-}
+const addToShoppingCartButtons = document.querySelectorAll(".addToCart");
+addToShoppingCartButtons.forEach((addToCardButton) => {
+  addToCardButton.addEventListener("click", () => {
+    agregarAlcarrito(),
+    cartInitialization()
+  })
+});
 
+// Event listeners
 
-const detectar = document.querySelector('.shoppingCartItem');
+sumButton.addEventListener("click", () =>
+  valor.value < 100 ? valor.value++ : ""
+);
 
+substractButton.addEventListener("click", () =>
+  valor.value > 1 ? valor.value-- : ""
+);
 
+cartContainerToggle.addEventListener("click", () => {
+  handleCartContainerToggle();
+});
