@@ -1,16 +1,28 @@
+//Array de productos
+const productos = [
+  {
+    precio: 125.0,
+    id: 1,
+    title: "Fall Limited Edition Sneakers",
+    thumbnailUrl: "images/image-product-1-thumbnail.jpg",
+  },
+];
+
 // DOM elements
 
-const shoppingCartItems = document.querySelector('#shoppingCartItemsContainer');
-const sumButton = document.getElementById('btn2');
-const substractButton = document.getElementById('btn1');
-const toggleAble = document.querySelector('.left-fragment-top-bar-buttons');
-const valor = document.querySelector('#txt')
-const shoppingCartItemsContainer = document.querySelector('.shopping-cart');
-const cartContainerToggle = document.querySelector('#cart-container-toggle');
-
-console.log(shoppingCartItems);
-
+const shoppingCartItems = document.querySelector("#shoppingCartItemsContainer");
+const sumButton = document.getElementById("btn2");
+const substractButton = document.getElementById("btn1");
+const valor = document.querySelector("#txt");
+const toggleAble = document.querySelector(".left-fragment-top-bar-buttons");
+const shoppingCartItemsContainer = document.querySelector(".shopping-cart");
+const cartContainerToggle = document.querySelector("#cart-container-toggle");
+const buttonAddToCart = document.querySelector(".addToCart");
+const notbutton = document.querySelector(".text-cart-noitem");
+const prueba = document.querySelector(".prueba");
 // Initial values for the cart
+
+const producto = productos.find((producto) => producto.id == 1);
 
 let cart = {
   // *TODOS*
@@ -23,37 +35,57 @@ let cart = {
   items: [],
   total: 0,
 };
-
-// Cart initialization
-
-function cartInitialization() { 
-   if (cart.total === 0) {
-    shoppingCartItems.innerHTML = 'funciona';
-  }
-}
-
-// Cart functions
-
 /* function readCartState() {
-
+  
 } 
 
 function updateCartState() {
-
+  
 }  */
-
-
 // Event handlers
 
 function handleCartContainerToggle() {
-  shoppingCartItemsContainer.classList.toggle('active');
-}
+  shoppingCartItemsContainer.classList.toggle("active");
+};
 
-const addToShoppingCartButtons = document.querySelectorAll('.addToCart');
+const addToShoppingCartButtons = document.querySelectorAll(".addToCart");
 addToShoppingCartButtons.forEach((addToCardButton) => {
-  addToCardButton.addEventListener('click', addToCartClicked);  
+  addToCardButton.addEventListener("click", addToCartClicked)
 });
 
+
+
+
+// Todo: lee los comentarios de arriba y reescribe esta función para que funcione con el nuevo objeto cart. Y reusa las funciones de
+// operaciones del carrito.
+
+
+// Event listeners
+
+sumButton.addEventListener("click", () =>
+  valor.value < 100 ? valor.value++ : ""
+);
+
+substractButton.addEventListener("click", () =>
+  valor.value > 1 ? valor.value-- : ""
+);
+
+cartContainerToggle.addEventListener("click", () => {
+  handleCartContainerToggle();
+});
+
+
+// Cart functions
+
+function cartInitialization() {
+  if (cart.total <= 0) {
+    notbutton.style.display = "flex";
+  } else if (cart.total = 1) {
+    notbutton.style.display = "none";
+  }
+};
+
+// Cart initialization
 
 function addToCartClicked(event) {
   const button = event.target;
@@ -76,13 +108,8 @@ function addToCartClicked(event) {
     amountItem,
     pricePerQuantity,
   );
-}
-
-
-// Todo: lee los comentarios de arriba y reescribe esta función para que funcione con el nuevo objeto cart. Y reusa las funciones de
-// operaciones del carrito.
-
-/* function addItemToShoppingCart(
+};
+ function addItemToShoppingCart(
   itemTitle,
   itemPrice,
   itemImage,
@@ -141,24 +168,7 @@ function addToCartClicked(event) {
    shoppingCartRow
    .querySelector('.buttonDelete')
    .addEventListener('click', removeShoppingCartItem);
-} */
-
-function removeShoppingCartItem(event) {
-  const buttonClicked = event.target;
-  buttonClicked.closest('.shoppingCartItem').remove();
-}
+};
 
 
-// Event listeners
-
-sumButton.addEventListener('click', () => valor.value < 100 ? valor.value++ : '');
-
-substractButton.addEventListener('click', () => valor.value > 1 ? valor.value-- : "");
-
-cartContainerToggle.addEventListener('click', () => {
-  handleCartContainerToggle();
-});
-
-
-
-cartInitialization();
+//

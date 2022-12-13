@@ -121,7 +121,7 @@ button.icon-cart {
   cursor: pointer;
 }
 /* Button Shopping Cart Container Toggle Shopping    */
-.cart-Container-Toggle {
+.shopping-cart {
   height: 38vh;
   background-color: hsl(0, 0%, 100%);
   position: absolute;
@@ -134,7 +134,7 @@ button.icon-cart {
   min-height: 30%;
 }
 
-.cart-Container-Toggle.active {
+.shopping-cart.active {
   display: block;
 }
 
@@ -176,6 +176,15 @@ button.btn-danger.buttonDelete {
   padding: 10px;
   background: transparent;
   cursor: pointer;
+}
+.container p{
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  padding: 5px 17px;
+  font-size: 0.79rem;
+  font-weight: 900;
+  border-bottom: 1px solid grey;
 }
 
 /*boton del perfil*/
@@ -394,7 +403,7 @@ button.btn-danger.buttonDelete {
     height: 14vh;
     max-height: 62px;
   }
-  .cart-Container-Toggle.active{
+  .shopping-cart.active{
     height: 28vh;
     right: 6%;
     width: 25%;
