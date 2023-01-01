@@ -4,7 +4,6 @@ let pro = [
     precio: 125.0,
     title: "Fall Limited Edition Sneakers",
     thumbnailUrl: "images/image-product-1-thumbnail.jpg",
-    quantity: 0,
   },
 ];
 
@@ -14,12 +13,15 @@ const shoppingCartItems = document.querySelector("#shoppingCartItemsContainer");
 const sumButton = document.getElementById("btn2");
 const substractButton = document.getElementById("btn1");
 const toggleAble = document.querySelector(".left-fragment-top-bar-buttons");
+const blackbackgr = document.querySelector(".blackBlock")
 const valor = document.querySelector("#txt");
 const shoppingCartItemsContainer = document.querySelector(".shopping-cart");
 const cartContainerToggle = document.querySelector("#cart-container-toggle");
 const ButtonCheckout = document.querySelector(".ButtonCheckout");
 
 const cantidad = document.getElementById("txt").value;
+const prod = pro.find((prodId) => prodId.id == 1);
+const send = document.querySelector(".addToCart");
 
 // Initial values for the cart
 
@@ -41,27 +43,23 @@ function cartInitialization() {
     ButtonCheckout.style.display = "flex";
   }
 }
-const prod = pro.find((prodId) => prodId.id == 1);
-
-
 
 const agregarAlcarrito = (prodId) => {
-  const existe = cart.items.some (prod => prod.id == 1)
- console.log(existe)
-  if(existe){
-    const prod = cart.items.map (prod => {
-      if (prod.id == prodId){
-        value++
+  const existe = cart.items.some((prod) => prod.id == 1);
+  console.log(existe);
+  if (existe) {
+    const prod = cart.items.map((prod) => {
+      if (prod.id == prodId) {
+        value++;
       }
-    })
+    });
   } else {
-      cart.items.push(prod);
-
+    cart.items.push(prod);
   }
   cart.total = cart.items.length;
-  
-  readCartState()
-}
+
+  readCartState();
+};
 
 const deleteItem = (prodId) => {
   const item = cart.items.find((prod) => prod.id === prodId);
@@ -71,20 +69,7 @@ const deleteItem = (prodId) => {
   readCartState();
 };
 
-const send = document.querySelector('.addToCart')
-
-
-
-    send.addEventListener("click", function(e){
-e.preventDefault();
-const cant = document.getElementById("txt");
-value = cant.value; 
-console.log(value)
-})
-
 const readCartState = () => {
- 
-  
   shoppingCartItems.innerHTML = "";
 
   cart.items.forEach((prod) => {
@@ -98,18 +83,26 @@ const readCartState = () => {
       </div>
       <div class="col-2">
           <div class="shopping-cart-price ">
-              <a class="shopping-cart-item-title shoppingCartItemTitle ">${prod.title}</a>
+              <a class="shopping-cart-item-title shoppingCartItemTitle ">${
+                prod.title
+              }</a>
               <div class="priceElement">
-              <p class="item-price shoppingCartItemPrice">$ ${prod.precio}.00 </p>
+              <p class="item-price shoppingCartItemPrice">$ ${
+                prod.precio
+              }.00 </p>
               <p class="item-quat shoppingCartItemquat shoppingCartItemQuantity">${value}</p>
-              <p class="item-quat shoppingCartItemPricePerQuantity ">${ "$" +prod.precio * value  + ".00"}</p>
+              <p class="item-quat shoppingCartItemPricePerQuantity ">${
+                "$" + prod.precio * value + ".00"
+              }</p>
               </div>
           </div>
       </div>
       <div class="col-4">
           <div
               class="shopping-cart-quantity ">
-              <button onclick="deleteItem(${prod.id})" class="btn-danger buttonDelete" type="button"><img src="./images/icon-delete.svg"></button>
+              <button onclick="deleteItem(${
+                prod.id
+              })" class="btn-danger buttonDelete" type="button"><img src="./images/icon-delete.svg"></button>
           </div>
       </div>
   </div>`;
@@ -135,13 +128,8 @@ buttonmenu.addEventListener("click", () => {
 
 function menuContainerToggle() {
   toggleAble.classList.toggle("active");
+  blackbackgr.classList.toggle("active");
 }
-const addToShoppingCartButtons = document.querySelectorAll(".addToCart");
-addToShoppingCartButtons.forEach((addToCardButton) => {
-  addToCardButton.addEventListener("click", () => {
-    agregarAlcarrito(), cartInitialization();
-  });
-});
 
 // Event listeners
 
@@ -155,4 +143,16 @@ substractButton.addEventListener("click", () =>
 
 cartContainerToggle.addEventListener("click", () => {
   handleCartContainerToggle();
+});
+const addToShoppingCartButtons = document.querySelectorAll(".addToCart");
+addToShoppingCartButtons.forEach((addToCardButton) => {
+  addToCardButton.addEventListener("click", () => {
+    agregarAlcarrito(), cartInitialization();
+  });
+});
+send.addEventListener("click", function (e) {
+  e.preventDefault();
+  const cant = document.getElementById("txt");
+  value = cant.value;
+  console.log(value);
 });

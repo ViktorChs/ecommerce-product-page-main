@@ -1,163 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
 
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="./images/favicon-32x32.png"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <link href="test.css" type="text/css" rel="stylesheet" />
-    <title>Frontend Mentor | E-commerce product page</title>
-  </head>
-  <div class="tester"></div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- displays site properly based on user's device -->
 
-  <body>
-    <header class="nav-bar container-top-bar">
-      <div class="botones-izquierdos">
-        <!-- Add event listener for mobile menu -->
-        <button class="button-menu-device">d          <img class="img-button-menu" src="images/icon-menu.svg" alt="" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700;800&display=swap" rel="stylesheet" />
+  <link href="test.css" type="text/css" rel="stylesheet" />
+  <title>Frontend Mentor | E-commerce product page</title>
+</head>
+<div class="tester"></div>
+
+<body>
+  <header class="nav-bar container-top-bar">
+    <div class="botones-izquierdos">
+      <button class="button-menu-device"><img class="img-button-menu" src="images/icon-menu.svg" alt="" />
+      </button>
+      <figure class="container-logo">
+        <img src="images/logo.svg" alt="" />
+      </figure>
+      <div class="blackBlock"></div>
+      <div class="left-fragment-top-bar-buttons" tabindex="0">
+        <button class="buttons-left-link-top"><a href=""  target="_self ">Collections</a></button>
+        <button class="buttons-left-link-top"><a href=""  target="_self ">Men</a></button>
+        <button class="buttons-left-link-top"><a href=""  target="_self ">Women</a></button>
+        <button class="buttons-left-link-top"><a href=""  target="_self ">About</a></button>
+        <button class="buttons-left-link-top"><a href=""  target="_self ">Contact</a></button>
+      </div>
+    </div>
+    <div>
+      <div class="profile-cart-button">
+        <button id="cart-container-toggle" class="icon-cart">
+          <img src="images/icon-cart.svg" alt="Cart button" />
         </button>
-        <figure class="container-logo">
-          <img src="images/logo.svg" alt="" />
-        </figure>
-        <div class="left-fragment-top-bar-buttons" tabindex="0">
-          <!-- Replace with links -->
-          <button class="buttons-left-link-top">
-            <span>Collections</span>
-          </button>
-          <button class="buttons-left-link-top">
-            <span>Men</span>
-          </button>
-          <button class="buttons-left-link-top">
-            <span>Women</span>
-          </button>
-          <button class="buttons-left-link-top">
-            <span>About</span>
-          </button>
-          <button class="buttons-left-link-top">
-            <span>Contact</span>
-          </button>
-        </div>
-      </div>
-      <div>
-        <div class="profile-cart-button">
-          <button id="cart-container-toggle" class="icon-cart">
-            <img src="images/icon-cart.svg" alt="Cart button" />
-          </button>
 
-          <section class="shopping-cart">
-            <div class="container">
-              <p class="cartContainer">Cart</p>
-              <div class="shopping-cart-items">
-                <a class="text-cart-noitem">Your cart is empty</a>
-                  <div id='shoppingCartItemsContainer'></div>
-                  <button class="ButtonCheckout" >Checkout</button>
-              </div>
+        <section class="shopping-cart">
+          <div class="container">
+            <p class="cartContainer">Cart</p>
+            <div class="shopping-cart-items">
+              <a class="text-cart-noitem">Your cart is empty</a>
+              <div id='shoppingCartItemsContainer'></div>
+              <button class="ButtonCheckout">Checkout</button>
             </div>
-          </section>
+          </div>
+        </section>
 
-          <button class="profile-button">
-            <img src="images/image-avatar.png" alt="" />
+        <button class="profile-button">
+          <img src="images/image-avatar.png" alt="" />
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="parent-container item">
+    <section class="gallery">
+      <div id="img-major">
+        <a href="#image1">
+          <img class="item-image" src="images/image-product-1.jpg" alt="galeria de imagenes" />
+        </a>
+      </div>
+      <div class="img-miniature">
+        <img src="images/image-product-1.jpg" alt="galeria de imagenes" />
+        <img src="images/image-product-2.jpg" alt="galeria de imagenes" />
+        <img src="images/image-product-3.jpg" alt="galeria de imagenes" />
+        <img src="images/image-product-4.jpg" alt="galeria de imagenes" />
+      </div>
+    </section>
+    <section id="contenedor-principal">
+      <div id="contenedor-interno">
+        <img id="img-activa" src="images/image-product-1.jpg" alt="galeria de imagenes" />
+        <button id="btn-close" type="button">
+          <img src="images/icon-close.svg" />
+        </button>
+        <button id="btn-next" type="button">
+          <img src="images/icon-next.svg" />
+        </button>
+        <button id="btn-previous" type="button">
+          <img src="images/icon-previous.svg" />
+        </button>
+
+        <div id="con " class="img-miniature">
+          <img src="images/image-product-1.jpg" alt="Imagen 1" />
+          <img src="images/image-product-2.jpg" alt="Imagen 2" />
+          <img src="images/image-product-3.jpg" alt="Imagen 3" />
+          <img src="images/image-product-4.jpg" alt="Imagen 4" />
+        </div>
+      </div>
+    </section>
+
+    <div class="descrition-product">
+      <a class="brand-name"> SNEAKER COMPANY</a>
+
+      <h1 class="item-title">Fall Limited Edition Sneakers</h1>
+
+      <p>
+        These low-profile sneakers are your perfect casual wear companion.
+        Featuring a durable rubber outer sole, they’ll withstand everything
+        the weather can offer.
+      </p>
+      <div class="containerx">
+        <div class="container-price">
+          <a class="price item-price">$125.00</a>
+          <a class="discount">50%</a>
+        </div>
+        <a class="previous-price">$250.00</a>
+      </div>
+      <div class="bts-add-buy">
+        <div class="true">
+          <button id="btn1" class="buttons-quantity-products">-</button>
+          <input type="text" class="quat" id="txt" value="1" />
+          <button id="btn2" class="buttons-quantity-products">+</button>
+        </div>
+
+        <div class="node">
+          <button class="buy-button btn-dark addToCart prueba">
+            <img src="images/icon-cart - white.svg" alt="" />Add to cart
           </button>
         </div>
       </div>
-    </header>
+    </div>
+  </main>
 
-    <main class="parent-container item">
-      <section class="gallery">
-        <div id="img-major">
-          <a href="#image1">
-            <img
-              class="item-image"
-              src="images/image-product-1.jpg"
-              alt="galeria de imagenes"
-            />
-          </a>
-        </div>
-        <div class="img-miniature">
-          <img src="images/image-product-1.jpg" alt="galeria de imagenes" />
-          <img src="images/image-product-2.jpg" alt="galeria de imagenes" />
-          <img src="images/image-product-3.jpg" alt="galeria de imagenes" />
-          <img src="images/image-product-4.jpg" alt="galeria de imagenes" />
-        </div>
-      </section>
-      <section id="contenedor-principal">
-        <div id="contenedor-interno">
-          <img
-            id="img-activa"
-            src="images/image-product-1.jpg"
-            alt="galeria de imagenes"
-          />
-          <button id="btn-close" type="button">
-            <img src="images/icon-close.svg" />
-          </button>
-          <button id="btn-next" type="button">
-            <img src="images/icon-next.svg" />
-          </button>
-          <button id="btn-previous" type="button">
-            <img src="images/icon-previous.svg" />
-          </button>
-
-          <div id="con " class="img-miniature">
-            <img src="images/image-product-1.jpg" alt="Imagen 1" />
-            <img src="images/image-product-2.jpg" alt="Imagen 2" />
-            <img src="images/image-product-3.jpg" alt="Imagen 3" />
-            <img src="images/image-product-4.jpg" alt="Imagen 4" />
-          </div>
-        </div>
-      </section>
-
-      <div class="descrition-product">
-        <a class="brand-name"> SNEAKER COMPANY</a>
-
-        <h1 class="item-title">Fall Limited Edition Sneakers</h1>
-
-        <p>
-          These low-profile sneakers are your perfect casual wear companion.
-          Featuring a durable rubber outer sole, they’ll withstand everything
-          the weather can offer.
-        </p>
-        <div class="containerx">
-          <div class="container-price">
-            <a class="price item-price">$125.00</a>
-            <a class="discount">50%</a>
-          </div>
-          <a class="previous-price">$250.00</a>
-        </div>
-        <div class="bts-add-buy">
-          <div class="true">
-            <button id="btn1" class="buttons-quantity-products">-</button>
-            <input type="text" class="quat" id="txt" value="1" />
-            <button id="btn2" class="buttons-quantity-products">+</button>
-          </div>
-
-          <div class="node">
-            <button class="buy-button btn-dark addToCart prueba">
-              <img src="images/icon-cart - white.svg" alt="" />Add to cart
-            </button>
-          </div>
-        </div>
-      </div>
-    </main>
-
-    <!--
+  <!--
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
   </div>-->
-    <script src="app.js"></script>
-    <script src="galery.js"></script>
-  </body>
+  <script src="app.js"></script>
+  <script src="galery.js"></script>
+</body>
+
 </html>
