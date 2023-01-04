@@ -26,7 +26,7 @@ body {
   margin: 0;
 }
 /* none display botones de navegacion y trancisiones*/
-.left-fragment-top-bar-buttons {
+.navbar__device {
   display: flex;
   position: absolute;
   flex-direction: column;
@@ -44,45 +44,24 @@ body {
   z-index: 101;
 }
 
-.left-fragment-top-bar-buttons.active {
+.navbar__device.active {
   transform: translateX(-25%);
   opacity: 100;
 }
-
+.container-nav-bar {
+  display: none;
+}
 
 .buttons-left-link-top {
-  width: calc(4rem + 1vw);
-  display: flex;
-  margin: unset;
-  background: transparent;
-  border-color: transparent;
-  font-size: 16px;
-  text-align: unset;
-  font-weight: unset;
-  flex-direction: row;
-  height: auto;
-}
-.buttons-left-link-top a {
-  color: #00000052;
+  border-bottom: 4px solid rgb(0 0 0 / 0%);
+  color: rgb(104 112 125);
+  font-size: 0.9rem;
+  padding: 2rem 0;
   text-decoration: none;
-  padding: 5vh 17px;
+  transition: all 0.4s ease-in-out;
+  margin-right: 2.5rem;
 }
 
-.left-fragment-top-bar-buttons .active .buttons-left-link-top:nth-of-type(1) {
-  transition-delay: 100ms;
-}
-.left-fragment-top-bar-buttons .active .buttons-left-link-top:nth-of-type(2) {
-  transition-delay: 200ms;
-}
-.left-fragment-top-bar-buttons .active .buttons-left-link-top:nth-of-type(3) {
-  transition-delay: 300ms;
-}
-.left-fragment-top-bar-buttons .active .buttons-left-link-top:nth-of-type(4) {
-  transition-delay: 400ms;
-}
-.left-fragment-top-bar-buttons .active .buttons-left-link-top:nth-of-type(5) {
-  transition-delay: 500ms;
-}
 /* botones izquierdos*/
 .botones-izquierdos {
   display: flex;
@@ -109,8 +88,7 @@ body {
   display: none;
 }
 .blackBlock.active {
-display: flex;
-
+  display: flex;
 }
 
 /* reales botones derechos*/
@@ -348,6 +326,7 @@ p.item-quat.shoppingCartItemPricePerQuantity {
   font-size: 18px;
   font-weight: 700;
   color: rgb(0 0 0 / 52%);
+  text-decoration: line-through;
 }
 /*contador*/
 .true {
@@ -408,10 +387,10 @@ p.item-quat.shoppingCartItemPricePerQuantity {
 
 /* Table */
 @media only screen and (min-width: 768px) {
-  .left-fragment-top-bar-buttons {
+  .navbar__device {
     transform: translateX(-700px);
   }
-  .left-fragment-top-bar-buttons.active {
+  .navbar__device.active {
     transform: translateX(-28%);
   }
   .parent-container {
@@ -431,10 +410,6 @@ p.item-quat.shoppingCartItemPricePerQuantity {
 
   .descrition-product {
     width: 80%;
-  }
-
-  .buttons-left-link-top {
-    font-size: calc(0.2em + 2.5vw);
   }
   .item-title {
     font-size: calc(3vh + 2vw);
@@ -469,43 +444,29 @@ p.item-quat.shoppingCartItemPricePerQuantity {
     margin: auto;
     justify-content: space-between;
   }
-  .left-fragment-top-bar-buttons {
-    display: flex;
-    background: unset;
-    width: unset;
-    height: unset;
-    padding-top: unset;
-    transform-origin: unset;
-    transform: unset;
-    opacity: unset;
-    transition-property: unset;
-    transition-duration: unset;
-    transition-timing-function: unset;
-    transform: unset;
-    margin-left: 10.2vw;
-    flex-direction: row;
+  .navbar__device {
+    display: none;
   }
-  .buttons-left-link-top {
-    width: calc(4rem + 1vw);
-    display: flex;
-    margin: unset;
-    background: transparent;
-    border-color: transparent;
-    font-size: 16px;
-    text-align: unset;
-    font-weight: unset;
-    justify-content: center;
-    flex-direction: row;
-    height: auto;
-  }
-  .buttons-left-link-top a {
-    color: #00000052;
+  .nav-bar-big {
+    color: #68707d;
+    font-size: 0.9rem;
+    padding: 2rem 0;
     text-decoration: none;
-    padding: 5vh 17px;
+    transition: all 0.4s ease-in-out;
+    margin-right: 2.5rem;
+    border-bottom: 4px solid transparent;
   }
-  .buttons-left-link-top :hover {
+
+  .nav-bar-big:hover {
     border-bottom: solid hsl(26, 100%, 55%);
     color: black;
+  }
+  .container-nav-bar {
+    display: flex;
+    align-items: center;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    margin-left: 4rem;
   }
   .shopping-cart.active {
     min-width: 28vh;
@@ -564,7 +525,7 @@ p.item-quat.shoppingCartItemPricePerQuantity {
     opacity: 0.5;
   }
   /*********************/
-  /*Contenedor Principal del Lightbox*/
+  /*main-container Lightbox*/
 
   #img-activa {
     width: calc(22vw + 22vh);
@@ -572,7 +533,7 @@ p.item-quat.shoppingCartItemPricePerQuantity {
     border-radius: 10px;
     max-height: none;
   }
-  #contenedor-principal {
+  #main-container {
     position: fixed;
     top: 0;
     left: 0;

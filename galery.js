@@ -2,7 +2,7 @@ const btnClose = document.querySelector("#btn-close");
 const btnNext = document.querySelector("#btn-next");
 const btnPrevious = document.querySelector("#btn-previous");
 const imagenes = document.querySelectorAll(".gallery img");
-const lightbox = document.querySelector("#contenedor-principal");
+const lightbox = document.querySelector("#main-container");
 const lightbox2 = document.querySelector("#con");
 const imagenActiva = document.querySelector("#img-activa");
 

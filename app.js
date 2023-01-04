@@ -12,14 +12,14 @@ const notbutton = document.querySelector(".text-cart-noitem");
 const shoppingCartItems = document.querySelector("#shoppingCartItemsContainer");
 const sumButton = document.getElementById("btn2");
 const substractButton = document.getElementById("btn1");
-const toggleAble = document.querySelector(".left-fragment-top-bar-buttons");
+const toggleAble = document.querySelector(".navbar__device");
 const blackbackgr = document.querySelector(".blackBlock")
 const valor = document.querySelector("#txt");
 const shoppingCartItemsContainer = document.querySelector(".shopping-cart");
 const cartContainerToggle = document.querySelector("#cart-container-toggle");
 const ButtonCheckout = document.querySelector(".ButtonCheckout");
 
-const cantidad = document.getElementById("txt").value;
+
 const prod = pro.find((prodId) => prodId.id == 1);
 const send = document.querySelector(".addToCart");
 
@@ -46,7 +46,6 @@ function cartInitialization() {
 
 const agregarAlcarrito = (prodId) => {
   const existe = cart.items.some((prod) => prod.id == 1);
-  console.log(existe);
   if (existe) {
     const prod = cart.items.map((prod) => {
       if (prod.id == prodId) {
@@ -154,5 +153,5 @@ send.addEventListener("click", function (e) {
   e.preventDefault();
   const cant = document.getElementById("txt");
   value = cant.value;
-  console.log(value);
+  
 });
